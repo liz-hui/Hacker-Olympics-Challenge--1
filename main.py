@@ -1,6 +1,6 @@
 import random
 
-print("HEY YOU. Want to win a free bubble tea? :) \n")
+print("HEY YOU. Want to win a free bubble tea? 🙂 \n")
 print(
     "This program generates a random number from the user's range.\nPlease try your best to guess the correct number and win! \n")
 
@@ -33,7 +33,7 @@ while type(max) is not int:
 # Generates random number within a given range in Python
 generated = random.randrange(min, max)
 
-guess = None
+# guess = None
 
 guess = input("\nWhat is your guess? \n")
 
@@ -45,8 +45,6 @@ if guess.isdigit():
 if guess > max or guess < min:
     print("You are out of bounds. \n Guess the number between the range " + str(min) + " and " + str(max))
     guess = input("\nWhat is your guess? \n")
-
-if guess.isdigit():
     guess = int(guess)
 
 # tests if it is an integer
@@ -58,13 +56,13 @@ while type(guess) is not int:
 while type(guess) is int:
     guess = int(guess)
 
-    while (generated > guess):
+    if (generated > guess):
         print("BZZ WRONG")
         print("Incorrect. The number is higher.")
         guess = input("Guess again \n")
         guess = int(guess)
 
-    while (generated < guess):
+    if (generated < guess):
         print("BZZ WRONG")
         print("Incorrect. The number is lower.")
         guess = input("Guess again \n")
@@ -75,3 +73,4 @@ while type(guess) is int:
         print("Congratulations! You guessed the number!")
         print("Contact SheHacks for your free bubble tea:)")
         break
+
